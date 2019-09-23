@@ -445,12 +445,11 @@ figure(17), im = imread( database(i).imageName  ); imshow(im);
 %%
 % generate feature vector, student need to write code to extract feature
 
-% for i = 1: length(database)
-%     imFile = database(i).imageName ;
-%     % Your code, make it work
-%      database(i).featRGB = getColourHistRGB(imFile);
-%      database(i).featHSV = getColourHistHSV(imFile);
-% end
+for i = 1: length(database)
+    imFile = database(i).imageName ;
+    % Your code, make it work
+     database(i).featShape = getShapeFeatureVec(imFile);
+end
 
 % save the variable dataBase
 save('database_cbir.mat', 'database');

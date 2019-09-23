@@ -10,6 +10,9 @@ area = s(idx).Area;
 width = bb(3);
 height = bb(4);
 diameter = immse(width, height);
+mia = regionprops(img, 'MajorAxisLength', 'MinorAxisLength');
+major_axis = mia(idx).MajorAxisLength;
+minor_axis = mia(idx).MinorAxisLength;
 
 figure;
 r1 = round(bb(2));
