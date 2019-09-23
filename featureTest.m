@@ -19,4 +19,3 @@ y = [1:rows]'*ones(1,cols);   % Matrix with each pixel set to its y coordinate
 meanx = sum(sum(double(I).*x))/area;
 meany = sum(sum(double(I).*y))/area;
 
-[major_axis, minor_axis] = regionprops(I,'MajorAxisLength','MinorAxisLength');
