@@ -1,7 +1,6 @@
-function program5_do_image_retrieval(HistQ,k)
 % The purpose of this program is to do image retrieval from the created
 % database , image folder inside working path
-%clc; clear all; close all;
+clc; clear all; close all;
 
 
 working_path = 'D:\Documents\MATLAB\DI&VP\Assignment';
@@ -47,7 +46,7 @@ numIm = length(database)  ; % this give the number of images in database
 for i=1:numIm
 % your code
 v2 = database(i).featShape;
-dist(i)=getEuclidian(v2,featShape);
+dist(i)=getEuclideanDistance(v2,featShape);
 end
 
 %% Step 2: Sort the distance, show most similar image
