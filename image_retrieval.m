@@ -1,6 +1,9 @@
 % The purpose of this program is to do image retrieval from the created
 % database , image folder inside working path
-clc; clear all; close all;
+
+function [prec, rec] = image_retrieval(imfile)
+
+close all;
 
 
 working_path = 'D:\Documents\MATLAB\DI&VP\Assignment';
@@ -24,18 +27,17 @@ load('database_cbir.mat','database');% loading the database mat file
 %HistQ = getColourHistHSV(imfile);
 %HistQ = database(3).featRGB ;
 
-prompt = 'Enter image file name , e.g 2.jpg >> ';
-x = input(prompt,'s') ;
-imfile = ['.\images\',x];
+% prompt = 'Enter image file name , e.g 2.jpg >> ';
+% x = input(prompt,'s') ;
+% imfile = ['.\images\',x];
 % prompt = 'Enter image label in database , e.g 1 for africa and 2 for beach >> ';
 % label_true = input(prompt) ;
-n = 1;    
+    
 
 fprintf('\n\n The query image = %s :', imfile );
 
-figure(n), imshow(imfile )
+figure, imshow(imfile )
 title('Query image');
-n = n+1;
 featShape = getShapeFeatureVec(imfile);
 
 %% Step 1: Find the K most similar images from the datase
@@ -60,8 +62,7 @@ end
 % id_list = [idx(1) idx(2) .....idx(10)] ;
 k=21
 id_list = id(1:k) ;
-figure(n);
-n = n+1;
+figure;
 count=0;
 
 
@@ -90,10 +91,12 @@ for j=1:k
     end
 end
 
+prec = count/(k-1);
+rec = count/(20);
 disp('Precision:');
-disp(count/(k-1));
+disp(prec);
 disp('Recall Rate');
-disp(count/(20));
+disp(rec);
 
 
 
