@@ -34,6 +34,12 @@ major_axis = mia(idx).MajorAxisLength;
 minor_axis = mia(idx).MinorAxisLength;
 
 [rows,cols] = size(I);
+
+if rows > cols
+    ratio = rows/cols;
+else
+    ratio = cols/rows;
+end
 %% 
 
 featVec = [area, perimeter, circularity, major_axis, minor_axis];
