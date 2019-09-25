@@ -61,6 +61,7 @@ end
 % id_list = [idx(1) idx(2) .....idx(10)] ;
 k=20
 id_list = id(1:k) ;
+figure;
 count=0;
 
 
@@ -70,7 +71,7 @@ b = 0;
 while (b*l)<(k)
     b = b+1;
 end
-figure('Name', 'Images Retrieved','NumberTitle','off');
+
 for j=1:k
    if j==1
         oriLabel=database(id).label;
@@ -91,24 +92,8 @@ for j=1:k
     rec(j) = count/20;
 end
 
-num_Images = 1:20;
-figure('Name', 'Precision vs Num_images','NumberTitle','off');
-plot(num_Images, prec,'g');
-title('Precision vs Number of Images')
-xlabel('Number of Images')
-ylabel('Precision')
 
-figure('Name', 'Recall Rate vs Num_Images','NumberTitle','off');
-plot(num_Images, rec);
-title('Recall Rate vs Number of Images')
-xlabel('Number of Images')
-ylabel('Recall Rate')
-
-figure('Name', 'Precision vs Recall Rate','NumberTitle','off');
-plot(rec, prec);
-xlabel('Recall Rate')
-ylabel('Precision')
-
+f
 
 
 
