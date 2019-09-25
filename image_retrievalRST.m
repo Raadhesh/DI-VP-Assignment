@@ -1,7 +1,7 @@
 % The purpose of this program is to do image retrieval from the created
 % database , image folder inside working path
 
-function [prec, rec] = image_retrieval(imfile)
+function [prec, rec] = image_retrievalRST(imfile)
 
 tic
 
@@ -35,9 +35,9 @@ load('database_cbir.mat','database');% loading the database mat file
 
 fprintf('\n\n The query image = %s :', imfile );
 
-figure, imshow(imfile );
+figure, imshow(imfile )
 title('Query image');
-featShape = getShapeFeatureVec(imfile);
+featShapeRST = getRSTShapeFeatureVec(imfile);
 
 %% Step 1: Find the K most similar images from the datase
 % This is done by comparing the feature vector of the query image and the feature vector of all the image in the database
@@ -46,8 +46,8 @@ numIm = length(database)  ; % this give the number of images in database
 
 for i=1:numIm
 % your code
-v2 = database(i).featShape;
-dist(i)=getEuclideanDistance(v2,featShape);
+v2 = database(i).featShapeRST;
+dist(i)=getEuclideanDistance(v2,featShapeRST);
 end
 
 %% Step 2: Sort the distance, show most similar image
@@ -99,22 +99,22 @@ xlabel('Number of Images')
 ylabel('Precision')
 
 figure('Name', 'Recall Rate vs Num_Images','NumberTitle','off');
-plot(num_Images, rec, 'b');
+plot(num_Images, rec);
 title('Recall Rate vs Number of Images')
 xlabel('Number of Images')
 ylabel('Recall Rate')
 
 figure('Name', 'Precision vs Recall Rate','NumberTitle','off');
-plot(rec, prec, 'r');
+plot(rec, prec);
 xlabel('Recall Rate')
 ylabel('Precision')
 
 
 
+
+
+
 toc
-
-
-
 
 
 

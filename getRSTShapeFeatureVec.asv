@@ -1,0 +1,33 @@
+function featVec = getRSTShapeFeatureVec(image_path)
+%image_path = 'Test.gif'
+% imshow(img);
+
+BW = imread(image_path);
+
+bound = regionprops(BW,'BoundingBox');
+sizes = cell2mat(struct2cell(bound(length(bound))));
+
+subimage = imcrop(BW, [sizes(1), sizes(2), sizes(3), sizes(4)]);
+
+resizedImage=imresize(subimage, [128 NaN]);
+
+I = resizedImage;
+s = regionprops(I);
+idx = length(s);
+bb = s(idx).BoundingBox;
+
+perim = bwperim(I);
+perimeter=sum(sum(perim));
+area = bwarea(I);
+circularity = perimeter/(4*pi*area);
+
+width = bb(3);
+height = bb(4);
+diameter = immse(width, height);
+mia = regionprops(I, 'MajorAxisLength', 'MinorAxisLength');
+major_axis = mia(idx).MajorAxisLength;
+minor_axis = mia(idx).MinorAxisLength;
+
+[rows,cols] = size(I);
+
+featVec = [area, perimeter, circularity, major_axis, minor_axis];

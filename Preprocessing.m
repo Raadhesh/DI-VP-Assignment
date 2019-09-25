@@ -449,6 +449,7 @@ for i = 1: length(database)
     imFile = database(i).imageName ;
     % Your code, make it work
      database(i).featShape = getShapeFeatureVec(imFile);
+     database(i).featShapeRST = getRSTShapeFeatureVec(imFile);
 end
 
 % save the variable dataBase
