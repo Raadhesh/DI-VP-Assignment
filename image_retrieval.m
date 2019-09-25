@@ -3,7 +3,6 @@
 
 function [prec, rec] = image_retrieval(imfile)
 
-close all;
 
 
 working_path = 'D:\Documents\MATLAB\DI&VP\Assignment';
@@ -60,7 +59,7 @@ end
 
 %% Step 4, Suppose the user want to show 10 images
 % id_list = [idx(1) idx(2) .....idx(10)] ;
-k=21
+k=20
 id_list = id(1:k) ;
 figure;
 count=0;
@@ -69,14 +68,14 @@ count=0;
 l = sqrt(k);
 l = round(l);
 b = 0;
-while (b*l)<(k-1)
+while (b*l)<(k)
     b = b+1;
 end
 
 for j=1:k
    if j==1
         oriLabel=database(id).label;
-        continue;
+        %continue;
    end
     id = id_list(j) ;
     imfile = database(id_list(j)).imageName ;
@@ -85,13 +84,13 @@ for j=1:k
     i = erase(i,".\images\");
     i = erase(i,".gif");
     str =[ i '   label= ' str] ;
-    subplot(l,b,j-1) , imshow(imfile) , title(str) ;
+    subplot(l,b,j) , imshow(imfile) , title(str) ;
     if label==oriLabel
         count=count+1;
     end
 end
 
-prec = count/(k-1);
+prec = count/(k);
 rec = count/(20);
 disp('Precision:');
 disp(prec);

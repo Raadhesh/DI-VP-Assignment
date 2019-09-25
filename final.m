@@ -12,6 +12,8 @@ recall_rate = (0);
 for z = 1:340
     imfile = database(z).imageName;
     [precision(z), recall_rate(z)] = image_retrieval(imfile);
+    database(z).precision = precision(z);
+    database(z).recall_rate = recall_rate(z);
 end
 
 average_precision = mean(precision);
