@@ -9,7 +9,7 @@ working_path = 'D:\Documents\MATLAB\DI&VP\Assignment';
 cd(working_path);
 addpath(pwd);
 
-
+tic
 %% Do retrieval for 1 example image
 
 
@@ -52,7 +52,7 @@ end
 
 %% Step 2: Sort the distance, show most similar image
 % your code
-[value,id] = sort(dist)
+[value,id] = sort(dist);
 
 %% Step 3
 
@@ -110,7 +110,7 @@ xlabel('Recall Rate')
 ylabel('Precision')
 
 
-
+toc
 
 
 

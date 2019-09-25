@@ -1,20 +1,49 @@
 
+% close all; clear; clc;
+% working_path = 'D:\Documents\MATLAB\DI&VP\Assignment';
+% cd(working_path);
+% addpath(pwd);
+% 
+% load('database_cbir.mat','database');% loading the database mat file
+% 
+% precision = (0);
+% recall_rate = (0);
+% 
+% total_prec = zeros(340,20);
+% total_rec = zeros(340,20);
+% 
+% 
+% for z = 1:340
+%     imfile = database(z).imageName;
+%     database(z).precision = zeros(1,20);
+%     database(z).recall_rate = zeros(1,20);
+%     [precision, recall_rate] = image_retrieval(imfile);
+%     database(z).precision(:) = precision;
+%     database(z).recall_rate(:) = recall_rate;
+%     total_prec(z,:) = precision;
+%     total_rec(z,:) = recall_rate; 
+%     close all;
+% end
+% 
+% average_prec = mean(total_prec);
+% average_rec = mean(total_rec);
 
-working_path = 'D:\Documents\MATLAB\DI&VP\Assignment';
-cd(working_path);
-addpath(pwd);
+num_Images = 1:20;
+figure('Name', 'Average Precision vs Num_images','NumberTitle','off');
+plot(num_Images, average_prec,'g');
+title('Average Precision vs Number of Images')
+xlabel('Number of Images')
+ylabel('Precision')
 
-load('database_cbir.mat','database');% loading the database mat file
+figure('Name', 'Average Recall Rate vs Num_Images','NumberTitle','off');
+plot(num_Images, average_rec, 'b');
+title('Average Recall Rate vs Number of Images')
+xlabel('Number of Images')
+ylabel('Recall Rate')
 
-precision = (0);
-recall_rate = (0);
+figure('Name', 'Average Precision vs Average Recall Rate','NumberTitle','off');
+plot(average_rec, average_prec, 'r');
+xlabel('Recall Rate')
+ylabel('Precision')
 
-for z = 1:340
-    imfile = database(z).imageName;
-    [precision(z), recall_rate(z)] = image_retrieval(imfile);
-    database(z).precision = precision(z);
-    database(z).recall_rate = recall_rate(z);
-end
 
-average_precision = mean(precision);
-average_recall_rate = mean(recall_rate);
