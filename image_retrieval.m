@@ -58,7 +58,7 @@ end
 
 %% Step 4, Suppose the user want to show 10 images
 % id_list = [idx(1) idx(2) .....idx(10)] ;
-k=11
+k=21
 id_list = id(1:k) ;
 figure(n);
 n = n+1;
@@ -68,7 +68,7 @@ count=0;
 l = sqrt(k);
 l = round(l);
 b = 0;
-while (b*l)<k
+while (b*l)<(k-1)
     b = b+1;
 end
 
@@ -91,7 +91,9 @@ for j=1:k
 end
 
 disp('Precision:');
-disp(count/k);
+disp(count/(k-1));
+disp('Recall Rate');
+disp(count/(20));
 
 
 

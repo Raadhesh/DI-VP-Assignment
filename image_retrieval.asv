@@ -80,7 +80,7 @@ for j=1:k
     id = id_list(j) ;
     imfile = database(id_list(j)).imageName ;
     label = database(id).label; str = sprintf('%d',label);
-    i = sprintf('%s',database(idj).imageName); 
+    i = sprintf('%s',database(id_list(j)).imageName); 
     i = erase(i,".\images\");
     i = erase(i,".gif");
     str =[ i '   label= ' str] ;
@@ -91,7 +91,7 @@ for j=1:k
 end
 
 disp('Precision:');
-disp(count/k);
+disp(count/(k);
 
 
 
