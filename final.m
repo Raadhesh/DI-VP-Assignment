@@ -1,6 +1,6 @@
 
 close all; clear; clc;
-tic
+
 
 working_path = 'D:\Documents\MATLAB\DI&VP\Assignment';
 cd(working_path);
@@ -14,7 +14,7 @@ recall_rate = (0);
 total_prec = zeros(340,20);
 total_rec = zeros(340,20);
 
-
+tic
 for z = 1:340
     imfile = database(z).imageName;
     database(z).precision = zeros(1,20);
@@ -26,7 +26,8 @@ for z = 1:340
     total_rec(z,:) = recall_rate; 
     close all;
 end
-
+toc
+tic
 average_prec = mean(total_prec);
 average_rec = mean(total_rec);
 
@@ -49,7 +50,7 @@ xlabel('Recall Rate')
 ylabel('Precision')
 
 
-
-save('new2_database_cbir.mat','database');% saving the database mat file
-
 toc
+% save('new2_database_cbir.mat','database');% saving the database mat file
+
+

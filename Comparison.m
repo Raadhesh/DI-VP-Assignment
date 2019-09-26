@@ -7,7 +7,7 @@ addpath(pwd);
 
 load('old_database_cbir.mat','database');
 databaseOld = database;
-load('new_database_cbir.mat','database');
+load('new2_database_cbir.mat','database');
 databaseNew = database;
 
 
