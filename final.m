@@ -50,6 +50,6 @@ ylabel('Precision')
 
 
 
-save('new_database_cbir.mat','database');% saving the database mat file
+save('new2_database_cbir.mat','database');% saving the database mat file
 
 toc

@@ -42,4 +42,5 @@ else
 end
 %% 
 
-featVec = [area, perimeter, circularity, major_axis, minor_axis];
+% featVec = [area, perimeter, circularity, major_axis, minor_axis];
+featVec = [area, perimeter, diameter, ratio, circularity, major_axis, minor_axis];
