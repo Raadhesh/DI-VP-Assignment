@@ -1,4 +1,4 @@
-function featVec = getRSTShapeFeatureVec(image_path)
+function featVec = getPartialRSTShapeFeatureVec(image_path)
 %image_path = 'Test.gif'
 % imshow(img);
 
@@ -42,5 +42,5 @@ else
 end
 %% 
 
-featVec = [area, perimeter, circularity, major_axis, minor_axis];
-%featVec = [area, perimeter, diameter, ratio, circularity, major_axis, minor_axis];
+% featVec = [area, perimeter, circularity, major_axis, minor_axis];
+featVec = [area, perimeter, diameter, ratio, circularity, major_axis, minor_axis];
