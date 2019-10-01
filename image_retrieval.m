@@ -17,7 +17,7 @@ addpath(pwd);
 load('database_cbir.mat','database');% loading the database mat file
 % prompt = 'Enter image file name , e.g 2.jpg >> ';
 % x = input(prompt,'s') 
-% 
+%  n  n 
 % x = '88.jpg';
 % imfile = ['.\images\',x];
 
