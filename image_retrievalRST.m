@@ -5,7 +5,7 @@ function [prec, rec] = image_retrievalRST(imfile)
 
 tic
 
-working_path = 'D:\Documents\MATLAB\DI&VP\Assignment';
+working_path = 'C:\Users\ThisI\Documents\GitHub\DI-VP-Assignment';
 cd(working_path);
 addpath(pwd);
 
@@ -108,11 +108,6 @@ figure('Name', 'Precision vs Recall Rate','NumberTitle','off');
 plot(rec, prec);
 xlabel('Recall Rate')
 ylabel('Precision')
-
-
-
-
-
 
 toc
 

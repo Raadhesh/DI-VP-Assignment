@@ -1,11 +1,12 @@
 % The purpose of this program is to do image retrieval from the created
 % database , image folder inside working path
 
+
 function [prec, rec] = image_retrieval(imfile)
 
 tic
 
-working_path = 'D:\Documents\MATLAB\DI&VP\Assignment';
+working_path = 'C:\Users\ThisI\Documents\GitHub\DI-VP-Assignment';
 cd(working_path);
 addpath(pwd);
 
@@ -19,7 +20,8 @@ load('database_cbir.mat','database');% loading the database mat file
 % x = input(prompt,'s') 
 % 
 % x = '88.jpg';
-% imfile = ['.\images\',x];
+
+imfile = ['.\images\bell-4.gif'];
 
 
 % get feature vector from selected query image

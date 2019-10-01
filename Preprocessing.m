@@ -5,7 +5,7 @@
 
 clc; clear all; close all;
 
-working_path = 'D:\Documents\MATLAB\DI&VP\Assignment';
+working_path = 'C:\Users\ThisI\Documents\GitHub\DI-VP-Assignment';
 image_directory = ['.\','images\'] ; % relative to working path
 
 cd(working_path);
