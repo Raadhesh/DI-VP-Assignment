@@ -118,7 +118,7 @@ image_retrieval(img)
 
 function [prec, rec] = image_retrieval(imfile, handles)
 tic
-working_path = 'C:\Users\ThisI\Documents\GitHub\DI-VP-Assignment';
+working_path = 'D:\Documents\MATLAB\DI&VP\Assignment';
 cd(working_path);
 addpath(pwd);
 
