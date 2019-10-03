@@ -108,6 +108,7 @@ ylabel('Recall Rate')
 
 figure('Name', 'Precision vs Recall Rate','NumberTitle','off');
 plot(rec, prec, 'r');
+title('Precision vs Recall Rate')
 xlabel('Recall Rate')
 ylabel('Precision')
 
