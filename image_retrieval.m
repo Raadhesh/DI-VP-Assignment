@@ -21,7 +21,6 @@ load('database_cbir.mat','database');% loading the database mat file
 %  n  n 
 % x = '88.jpg';
 
-imfile = ['.\images\bell-4.gif'];
 
 
 % get feature vector from selected query image
@@ -94,6 +93,7 @@ for j=1:k
 end
 
 num_Images = 1:20;
+
 figure('Name', 'Precision vs Num_images','NumberTitle','off');
 plot(num_Images, prec,'g');
 title('Precision vs Number of Images')
