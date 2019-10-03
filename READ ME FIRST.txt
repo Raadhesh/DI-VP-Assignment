@@ -1,0 +1,4 @@
+Please do the following to run the program
+1)Select Copy_of_assign
+2)Change working path variable to your folder path
+3)Run Copy_of_assign

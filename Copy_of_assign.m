@@ -1,4 +1,7 @@
 function varargout = assign(varargin)
+global working_path;
+working_path = 'D:\Documents\MATLAB\DI&VP\Assignment';
+
 % ASSIGN MATLAB code for assign.fig
 %      ASSIGN, by itself, creates a new ASSIGN or raises the existing
 %      singleton*.

@@ -1,7 +1,7 @@
 close all; clear; clc;
 tic
 
-working_path = 'D:\Documents\MATLAB\DI&VP\Assignment';
+global working_path;
 cd(working_path);
 addpath(pwd);
 

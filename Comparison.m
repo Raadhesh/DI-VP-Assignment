@@ -1,7 +1,7 @@
 close all; clear; clc;
 tic
 
-working_path = 'C:\Users\ThisI\Documents\GitHub\DI-VP-Assignment';
+global working_path;
 cd(working_path);
 addpath(pwd);
 
