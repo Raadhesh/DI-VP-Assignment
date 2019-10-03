@@ -14,7 +14,7 @@ addpath(pwd);
 
 
 %% Step 0: Get query image
-load('database_cbir.mat','database');% loading the database mat file
+load('final_database_cbir.mat','database');% loading the database mat file
 % prompt = 'Enter image file name , e.g 2.jpg >> ';
 % x = input(prompt,'s') 
 % 
