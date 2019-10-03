@@ -35,8 +35,8 @@ load('final_database_cbir.mat','database');% loading the database mat file
 
 fprintf('\n\n The query image = %s :', imfile );
 
-figure, imshow(imfile )
-title('Query image');
+% figure, imshow(imfile )
+% title('Query image');
 featShapePartialRST = getPartialRSTShapeFeatureVec(imfile);
 
 %% Step 1: Find the K most similar images from the datase
@@ -111,7 +111,9 @@ ylabel('Precision')
 
 
 
+fprintf('\nThe precision of 20 images is %8.3f\n', prec(20));
 
+fprintf('The recall rate of 20 images is %8.3f\n', rec(20));
 
 
 toc

@@ -62,6 +62,7 @@ legend('shape','RST shape', 'Partial RST shape')
 
 figure('Name', 'Average Precision vs Average Recall Rate','NumberTitle','off');
 plot(average_rec1, average_prec1, 'b-o', average_rec2, average_prec2, 'r-o', average_rec3, average_prec3, 'g-o');
+title('Average Precision vs Average Recall Rate')
 xlabel('Recall Rate(%)')
 ylabel('Precision(%)')
 legend('shape','RST shape', 'Partial RST shape')
